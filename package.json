@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "npm --prefix client run build",
-    "start": "NODE_ENV=production node server/server.js",
+    "start": "node server/server.js",
     "dev:client": "npm --prefix client run dev",
     "dev:server": "npm --prefix server run dev",
     "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
