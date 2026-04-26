@@ -1,0 +1,26 @@
+{
+  "name": "cryveth",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix client run build",
+    "start": "NODE_ENV=production node server/server.js",
+    "dev:client": "npm --prefix client run dev",
+    "dev:server": "npm --prefix server run dev",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "install:all": "npm --prefix client install && npm --prefix server install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.4.1",
+    "form-data": "^4.0.5",
+    "helmet": "^8.1.0",
+    "multer": "^2.1.1",
+    "node-fetch": "^3.3.2"
+  }
+}

@@ -1,0 +1,26 @@
+CryVeth verification summary
+
+Completed fixes:
+- Repaired client/package.json and restored react-router-dom
+- Repaired root package.json scripts and added install:all
+- Added root .env, documented .env.example, and expanded .gitignore
+- Confirmed client/.npmrc only contains legacy-peer-deps=true
+- Fixed responsive grid in Languages.jsx and Errors.jsx
+- Added global mobile CSS guards in client/src/index.css
+- Improved AI Chat behavior when no provider key is configured so the UI fails gracefully without browser console errors
+
+Verification performed:
+- npm --prefix client install: success
+- npm --prefix server install: success
+- npm install at root: success
+- npm run build: success
+- npm run dev: success (Vite + Express/Nodemon started)
+- Browser smoke test with Playwright on routes /, /languages, /errors, /tutorials, /ai: all returned HTTP 200
+- Browser console errors: none during smoke test
+- Page runtime errors: none during smoke test
+- Mobile viewport 375px overflow check on Languages and Errors: no horizontal overflow detected (scrollWidth == innerWidth)
+
+AI Chat note:
+- No real OPENROUTER_API_KEY, GROQ_API_KEY, or GEMINI_API_KEY was available in the provided project.
+- The UI and backend wiring are ready. To enable live AI replies, fill at least one provider key in .env and restart the server.
+- Without a key, the app now shows a local configuration notice instead of triggering noisy browser-console network errors.

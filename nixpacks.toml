@@ -1,0 +1,11 @@
+[phases.install]
+cmds = [
+  "npm --prefix client install",
+  "npm --prefix server install --omit=dev"
+]
+
+[phases.build]
+cmds = ["npm --prefix client run build"]
+
+[start]
+cmd = "NODE_ENV=production node server/server.js"
